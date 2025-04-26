@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Building, Clock, DollarSign } from 'lucide-react';
@@ -7,43 +7,36 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import NavBar from '../components/NavBar';
 
-// Mock data for job listings
-const mockJobs = [
-  {
-    id: 1,
-    title: 'Warehouse Associate',
-    company: 'Amazon',
-    location: 'San Jose, CA',
-    type: 'Full-time',
-    salary: '$18-22/hr',
-    description: 'Looking for motivated individuals to join our warehouse team.',
-    requirements: ['Able to lift 50 lbs', 'Flexible schedule', 'Reliable transportation']
-  },
-  {
-    id: 2,
-    title: 'Kitchen Staff',
-    company: 'Chipotle',
-    location: 'Santa Clara, CA',
-    type: 'Part-time',
-    salary: '$17-20/hr',
-    description: 'Join our kitchen team and help prepare fresh, delicious meals.',
-    requirements: ['Food handling experience', 'Weekend availability', 'Team player']
-  },
-  {
-    id: 3,
-    title: 'Retail Associate',
-    company: 'Target',
-    location: 'San Jose, CA',
-    type: 'Full-time',
-    salary: '$16-19/hr',
-    description: 'Customer service focused retail position with growth opportunities.',
-    requirements: ['Customer service experience', 'Flexible schedule', 'Basic math skills']
-  }
-];
+// Import mock data
+import { mockJobs } from '../data/mockData';
+import { getJobs } from '../services/api';
 
 const Jobs: React.FC = () => {
   const { t } = useTranslation();
   const [filter, setFilter] = useState('all');
+  const [jobs, setJobs] = useState(mockJobs);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Uncomment the following when API is ready
+    /*
+    const fetchJobs = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
+        const data = await getJobs({ filter });
+        setJobs(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to fetch jobs');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchJobs();
+    */
+  }, [filter]);
 
   // Animation variants
   const containerVariants = {
@@ -69,6 +62,27 @@ const Jobs: React.FC = () => {
       }
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-neutral-600">{t('common.loading')}</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-error-600 mb-4">{error}</p>
+          <Button onClick={() => window.location.reload()}>
+            {t('common.retry')}
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -115,7 +129,7 @@ const Jobs: React.FC = () => {
         </motion.div>
 
         <div className="space-y-4">
-          {mockJobs.map(job => (
+          {jobs.map(job => (
             <motion.div key={job.id} variants={itemVariants}>
               <Card className="p-4">
                 <div className="flex justify-between items-start mb-4">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Pages
@@ -18,14 +18,18 @@ import LanguageSelector from './components/LanguageSelector';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 
   // Check if user is authenticated
   useEffect(() => {
+    const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
-    if (user) {
+    
+    if (token && user) {
       setIsAuthenticated(true);
     }
+    setIsLoading(false);
   }, []);
 
   const handleLogin = () => {
@@ -34,12 +38,17 @@ function App() {
 
   const handleLogout = () => {
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
     setIsAuthenticated(false);
   };
 
   // Determine if we should show language selector (not on login/signup)
   const showLanguageSelector = !location.pathname.includes('/login') && 
     !location.pathname.includes('/signup');
+
+  if (isLoading) {
+    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -54,11 +63,27 @@ function App() {
           <Route 
             path="/" 
             element={
-              <Login onLogin={handleLogin} />
+              isAuthenticated ? 
+                <Navigate to="/dashboard" replace /> : 
+                <Navigate to="/login" replace />
             } 
           />
-          <Route path="/login" element={<Login onLogin={handleLogin} />} />
-          <Route path="/signup" element={<Signup onSignup={handleLogin} />} />
+          <Route 
+            path="/login" 
+            element={
+              isAuthenticated ? 
+                <Navigate to="/dashboard" replace /> : 
+                <Login onLogin={handleLogin} />
+            } 
+          />
+          <Route 
+            path="/signup" 
+            element={
+              isAuthenticated ? 
+                <Navigate to="/dashboard" replace /> : 
+                <Signup onSignup={handleLogin} />
+            } 
+          />
           <Route 
             path="/dashboard" 
             element={
@@ -113,4 +138,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
