@@ -15,68 +15,15 @@ import {
 import Button from "../components/Button";
 import Card from "../components/Card";
 import NavBar from "../components/NavBar";
+import { mockRewards, mockRedemptionHistory } from "../data/mockData"; // Import mock data
 
-// Mock data for available rewards
-const mockRewards = [
-  {
-    id: 1,
-    name: "Food Coupon",
-    description: "$10 voucher for local restaurants",
-    pointsCost: 50,
-    image:
-      "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    icon: <Coffee size={24} className="text-accent-600" />,
-    category: "food",
-  },
-  {
-    id: 2,
-    name: "Haircut Voucher",
-    description: "Free haircut at participating salons",
-    pointsCost: 75,
-    image:
-      "https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    icon: <Scissors size={24} className="text-accent-600" />,
-    category: "services",
-  },
-  {
-    id: 3,
-    name: "Thrift Shop Credit",
-    description: "$15 credit at Community Thrift",
-    pointsCost: 60,
-    image:
-      "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    icon: <ShoppingBag size={24} className="text-accent-600" />,
-    category: "clothing",
-  },
-  {
-    id: 4,
-    name: "Bus Pass",
-    description: "7-day VTA transit pass",
-    pointsCost: 100,
-    image:
-      "https://images.pexels.com/photos/1209978/pexels-photo-1209978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    icon: <Bus size={24} className="text-accent-600" />,
-    category: "transportation",
-  },
-];
-
-// Mock data for redemption history
-const mockRedemptionHistory = [
-  {
-    id: 101,
-    rewardName: "Food Coupon",
-    date: "2025-03-10",
-    pointsCost: 50,
-    status: "completed",
-  },
-  {
-    id: 102,
-    rewardName: "Bus Pass",
-    date: "2025-02-22",
-    pointsCost: 100,
-    status: "completed",
-  },
-];
+const iconMap = {
+  food: <Coffee size={24} className="text-accent-600" />,
+  services: <Scissors size={24} className="text-accent-600" />,
+  clothing: <ShoppingBag size={24} className="text-accent-600" />,
+  transportation: <Bus size={24} className="text-accent-600" />,
+  // Add other categories and their corresponding icons as needed
+};
 
 const Rewards: React.FC = () => {
   const { t } = useTranslation();
@@ -85,11 +32,29 @@ const Rewards: React.FC = () => {
   const [redeemed, setRedeemed] = useState<number[]>([]);
   const [redemptionHistory, setRedemptionHistory] = useState(
     mockRedemptionHistory
-  );
+  ); // Initialize with mock data
   const [showConfirmation, setShowConfirmation] = useState<number | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleRedeem = (rewardId: number, pointsCost: number) => {
+  // Uncomment the following when API is ready
+  /*
+  useEffect(() => {
+    const fetchRewards = async () => {
+      try {
+        const rewardsData = await getRewards(); // Fetch rewards from API
+        const historyData = await getRedemptionHistory(); // Fetch redemption history from API
+        setRedeemed(historyData.redeemed); // Set redeemed rewards
+        setRedemptionHistory(historyData.history); // Set redemption history
+      } catch (err) {
+        console.error(err); // Handle error
+      }
+    };
+
+    fetchRewards();
+  }, []);
+  */
+
+  const handleRedeem = (rewardId: number) => {
     // First show confirmation
     setShowConfirmation(rewardId);
   };
@@ -255,7 +220,7 @@ const Rewards: React.FC = () => {
                   <div className="flex justify-between items-start mb-2">
                     <div className="flex items-center">
                       <div className="rounded-full bg-accent-100 p-2 mr-3">
-                        {reward.icon}
+                        {iconMap[reward.category]}
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold">{reward.name}</h3>
@@ -341,9 +306,7 @@ const Rewards: React.FC = () => {
                             <AlertCircle size={16} />
                           )
                         }
-                        onClick={() =>
-                          handleRedeem(reward.id, reward.pointsCost)
-                        }
+                        onClick={() => handleRedeem(reward.id)}
                         disabled={userPoints < reward.pointsCost}
                       >
                         {userPoints >= reward.pointsCost
