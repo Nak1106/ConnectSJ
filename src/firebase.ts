@@ -3,14 +3,15 @@ import { getAuth, Auth } from "firebase/auth";
 import { getFirestore, Firestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDXgw48NQn7q7k2kDQX_rA3iBr0yhVqj6k",
-  authDomain: "project-1-1ce57.firebaseapp.com",
-  databaseURL: "https://project-1-1ce57.firebaseio.com",
-  projectId: "project-1-1ce57",
-  storageBucket: "project-1-1ce57.firebasestorage.app",
-  messagingSenderId: "691781700477",
-  appId: "1:691781700477:web:69360e48a1f18ce5ec1a14"
-};
+    apiKey: "AIzaSyBTLPiJji6hXPy2bpmH9jNqJJMkGuUkDLk",
+    authDomain: "connectsj-68124.firebaseapp.com",
+    projectId: "connectsj-68124",
+    storageBucket: "connectsj-68124.firebasestorage.app",
+    messagingSenderId: "138081084881",
+    appId: "1:138081084881:web:d66ba8b9fad596a5d0acf0",
+    measurementId: "G-NK5QHWX80D"
+  };
+  
 
 // Prevent re-initializing when hot-reloading
 const app = !getApps().length
