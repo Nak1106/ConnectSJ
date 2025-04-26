@@ -1,0 +1,108 @@
+{
+  "app": {
+    "name": "ConnectSJ 2.0"
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "calstateId": "CalState ID",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signupHere": "Sign up here",
+    "loginHere": "Login here",
+    "createAccount": "Create Account"
+  },
+  "profile": {
+    "title": "Profile",
+    "age": "Age",
+    "gender": "Gender",
+    "hasPets": "Do you have pets?",
+    "petType": "Type of pet",
+    "save": "Save Changes",
+    "male": "Male",
+    "female": "Female",
+    "nonBinary": "Non-binary",
+    "preferNotToSay": "Prefer not to say",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "points": "Points",
+    "findHelp": "Find Help",
+    "shelter": "Shelter",
+    "food": "Food",
+    "health": "Healthcare",
+    "jobs": "Jobs",
+    "services": "Services",
+    "incentives": "Earn Points",
+    "rewards": "Rewards",
+    "logout": "Log Out"
+  },
+  "resources": {
+    "title": "Resources",
+    "shelters": "Shelters",
+    "food": "Food",
+    "healthcare": "Healthcare",
+    "transportation": "Transportation",
+    "nearby": "Nearby",
+    "address": "Address",
+    "phone": "Phone",
+    "hours": "Hours",
+    "distance": "Distance",
+    "directions": "Directions"
+  },
+  "incentives": {
+    "title": "Earn Points",
+    "available": "Available Activities",
+    "cleanup": "Community Cleanup",
+    "planting": "Tree Planting",
+    "volunteer": "Volunteer Work",
+    "refer": "Refer a Friend",
+    "points": "Points",
+    "date": "Date",
+    "location": "Location",
+    "join": "Join",
+    "history": "Activity History"
+  },
+  "rewards": {
+    "title": "Rewards",
+    "yourPoints": "Your Points",
+    "availableRewards": "Available Rewards",
+    "foodCoupons": "Food Coupons",
+    "haircuts": "Free Haircuts",
+    "thriftShop": "Thrift Shop Vouchers",
+    "busPass": "Bus Pass",
+    "redeem": "Redeem",
+    "pointsNeeded": "Points Needed",
+    "redeemHistory": "Redemption History"
+  },
+  "jobs": {
+    "title": "Jobs",
+    "available": "Available Jobs",
+    "company": "Company",
+    "position": "Position",
+    "location": "Location",
+    "apply": "Apply",
+    "requirements": "Requirements",
+    "fullTime": "Full Time",
+    "partTime": "Part Time",
+    "temporary": "Temporary",
+    "contract": "Contract"
+  },
+  "common": {
+    "search": "Search",
+    "back": "Back",
+    "view": "View",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "confirm": "Confirm",
+    "delete": "Delete"
+  }
+}

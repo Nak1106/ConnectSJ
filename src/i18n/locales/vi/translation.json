@@ -1,0 +1,108 @@
+{
+  "app": {
+    "name": "ConnectSJ 2.0"
+  },
+  "auth": {
+    "login": "Đăng Nhập",
+    "signup": "Đăng Ký",
+    "calstateId": "ID CalState",
+    "password": "Mật Khẩu",
+    "confirmPassword": "Xác Nhận Mật Khẩu",
+    "forgotPassword": "Quên Mật Khẩu?",
+    "noAccount": "Chưa có tài khoản?",
+    "hasAccount": "Đã có tài khoản?",
+    "signupHere": "Đăng ký tại đây",
+    "loginHere": "Đăng nhập tại đây",
+    "createAccount": "Tạo Tài Khoản"
+  },
+  "profile": {
+    "title": "Hồ Sơ",
+    "age": "Tuổi",
+    "gender": "Giới Tính",
+    "hasPets": "Bạn có thú cưng không?",
+    "petType": "Loại thú cưng",
+    "save": "Lưu Thay Đổi",
+    "male": "Nam",
+    "female": "Nữ",
+    "nonBinary": "Phi nhị phân",
+    "preferNotToSay": "Không muốn nói",
+    "yes": "Có",
+    "no": "Không"
+  },
+  "dashboard": {
+    "welcome": "Xin Chào",
+    "points": "Điểm",
+    "findHelp": "Tìm Sự Giúp Đỡ",
+    "shelter": "Nơi Trú Ẩn",
+    "food": "Thực Phẩm",
+    "health": "Chăm Sóc Sức Khỏe",
+    "jobs": "Việc Làm",
+    "services": "Dịch Vụ",
+    "incentives": "Kiếm Điểm",
+    "rewards": "Phần Thưởng",
+    "logout": "Đăng Xuất"
+  },
+  "resources": {
+    "title": "Tài Nguyên",
+    "shelters": "Nơi Trú Ẩn",
+    "food": "Thực Phẩm",
+    "healthcare": "Chăm Sóc Sức Khỏe",
+    "transportation": "Giao Thông",
+    "nearby": "Gần Đây",
+    "address": "Địa Chỉ",
+    "phone": "Điện Thoại",
+    "hours": "Giờ Mở Cửa",
+    "distance": "Khoảng Cách",
+    "directions": "Chỉ Đường"
+  },
+  "incentives": {
+    "title": "Kiếm Điểm",
+    "available": "Hoạt Động Hiện Có",
+    "cleanup": "Dọn Dẹp Cộng Đồng",
+    "planting": "Trồng Cây",
+    "volunteer": "Công Việc Tình Nguyện",
+    "refer": "Giới Thiệu Bạn Bè",
+    "points": "Điểm",
+    "date": "Ngày",
+    "location": "Địa Điểm",
+    "join": "Tham Gia",
+    "history": "Lịch Sử Hoạt Động"
+  },
+  "rewards": {
+    "title": "Phần Thưởng",
+    "yourPoints": "Điểm Của Bạn",
+    "availableRewards": "Phần Thưởng Hiện Có",
+    "foodCoupons": "Phiếu Thực Phẩm",
+    "haircuts": "Cắt Tóc Miễn Phí",
+    "thriftShop": "Phiếu Mua Hàng Ở Cửa Hàng Đồ Cũ",
+    "busPass": "Vé Xe Buýt",
+    "redeem": "Đổi",
+    "pointsNeeded": "Điểm Cần Thiết",
+    "redeemHistory": "Lịch Sử Đổi Thưởng"
+  },
+  "jobs": {
+    "title": "Việc Làm",
+    "available": "Việc Làm Hiện Có",
+    "company": "Công Ty",
+    "position": "Vị Trí",
+    "location": "Địa Điểm",
+    "apply": "Ứng Tuyển",
+    "requirements": "Yêu Cầu",
+    "fullTime": "Toàn Thời Gian",
+    "partTime": "Bán Thời Gian",
+    "temporary": "Tạm Thời",
+    "contract": "Hợp Đồng"
+  },
+  "common": {
+    "search": "Tìm Kiếm",
+    "back": "Quay Lại",
+    "view": "Xem",
+    "loading": "Đang Tải...",
+    "error": "Đã xảy ra lỗi",
+    "retry": "Thử Lại",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "confirm": "Xác Nhận",
+    "delete": "Xóa"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "app": {
+    "name": "ConnectSJ 2.0"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "calstateId": "ID de CalState",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "forgotPassword": "¿Olvidó su contraseña?",
+    "noAccount": "¿No tiene una cuenta?",
+    "hasAccount": "¿Ya tiene una cuenta?",
+    "signupHere": "Regístrese aquí",
+    "loginHere": "Inicie sesión aquí",
+    "createAccount": "Crear Cuenta"
+  },
+  "profile": {
+    "title": "Perfil",
+    "age": "Edad",
+    "gender": "Género",
+    "hasPets": "¿Tiene mascotas?",
+    "petType": "Tipo de mascota",
+    "save": "Guardar Cambios",
+    "male": "Masculino",
+    "female": "Femenino",
+    "nonBinary": "No binario",
+    "preferNotToSay": "Prefiero no decir",
+    "yes": "Sí",
+    "no": "No"
+  },
+  "dashboard": {
+    "welcome": "Bienvenido",
+    "points": "Puntos",
+    "findHelp": "Buscar Ayuda",
+    "shelter": "Refugio",
+    "food": "Comida",
+    "health": "Salud",
+    "jobs": "Empleos",
+    "services": "Servicios",
+    "incentives": "Ganar Puntos",
+    "rewards": "Recompensas",
+    "logout": "Cerrar Sesión"
+  },
+  "resources": {
+    "title": "Recursos",
+    "shelters": "Refugios",
+    "food": "Comida",
+    "healthcare": "Atención Médica",
+    "transportation": "Transporte",
+    "nearby": "Cercano",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "hours": "Horario",
+    "distance": "Distancia",
+    "directions": "Direcciones"
+  },
+  "incentives": {
+    "title": "Ganar Puntos",
+    "available": "Actividades Disponibles",
+    "cleanup": "Limpieza Comunitaria",
+    "planting": "Plantación de Árboles",
+    "volunteer": "Trabajo Voluntario",
+    "refer": "Recomendar a un Amigo",
+    "points": "Puntos",
+    "date": "Fecha",
+    "location": "Ubicación",
+    "join": "Unirse",
+    "history": "Historial de Actividades"
+  },
+  "rewards": {
+    "title": "Recompensas",
+    "yourPoints": "Sus Puntos",
+    "availableRewards": "Recompensas Disponibles",
+    "foodCoupons": "Cupones de Comida",
+    "haircuts": "Cortes de Pelo Gratuitos",
+    "thriftShop": "Vales para Tiendas de Segunda Mano",
+    "busPass": "Pase de Autobús",
+    "redeem": "Canjear",
+    "pointsNeeded": "Puntos Necesarios",
+    "redeemHistory": "Historial de Canjes"
+  },
+  "jobs": {
+    "title": "Empleos",
+    "available": "Empleos Disponibles",
+    "company": "Empresa",
+    "position": "Puesto",
+    "location": "Ubicación",
+    "apply": "Aplicar",
+    "requirements": "Requisitos",
+    "fullTime": "Tiempo Completo",
+    "partTime": "Medio Tiempo",
+    "temporary": "Temporal",
+    "contract": "Contrato"
+  },
+  "common": {
+    "search": "Buscar",
+    "back": "Atrás",
+    "view": "Ver",
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "confirm": "Confirmar",
+    "delete": "Eliminar"
+  }
+}
