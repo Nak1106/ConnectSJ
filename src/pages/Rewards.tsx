@@ -235,59 +235,124 @@ const Rewards: React.FC = () => {
         </motion.div>
       )}
 
-      <div className="px-6 flex gap-4 flex-wrap justify-center">
+      <div className="px-6">
         {activeTab === "available" ? (
           mockRewards.map((reward) => (
             <motion.div
               key={reward.id}
               variants={itemVariants}
-              className="mb-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
-              style={{ height: "300px" }}
+              className="mb-4"
             >
-              <Card className="overflow-hidden p-0 h-full w-full flex flex-col">
-                <div className="h-2/3 overflow-hidden">
+              <Card className="overflow-hidden p-0">
+                <div className="h-40 overflow-hidden">
                   <img
                     src={reward.image}
                     alt={reward.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-4 flex flex-col justify-between h-1/3">
-                  <div>
-                    <h3 className="text-lg font-semibold">{reward.name}</h3>
-                    <p className="text-sm text-neutral-600">
-                      {reward.description}
-                    </p>
-                  </div>
-                  <div className="flex justify-between items-center mt-7">
-                    <span className="text-sm bg-primary-50 text-primary-700 px-2 py-1 rounded-full flex items-center justify-center whitespace-nowrap">
+                <div className="p-4">
+                  <div className="flex justify-between items-start mb-2">
+                    <div className="flex items-center">
+                      <div className="rounded-full bg-accent-100 p-2 mr-3">
+                        {reward.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold">{reward.name}</h3>
+                        <p className="text-sm text-neutral-600">
+                          {reward.description}
+                        </p>
+                      </div>
+                    </div>
+                    <span className="text-sm bg-primary-50 text-primary-700 px-2 py-1 rounded-full flex items-center">
                       <Award size={14} className="mr-1" />
                       {reward.pointsCost} {t("incentives.points")}
                     </span>
-                    <Button
-                      variant={
-                        userPoints >= reward.pointsCost ? "primary" : "outline"
-                      }
-                      size="sm"
-                      className={
-                        userPoints < reward.pointsCost
-                          ? "text-neutral-400 border-neutral-300"
-                          : ""
-                      }
-                      icon={
-                        userPoints >= reward.pointsCost ? (
-                          <CheckCircle size={16} />
-                        ) : (
-                          <AlertCircle size={16} />
-                        )
-                      }
-                      onClick={() => handleRedeem(reward.id, reward.pointsCost)}
-                      disabled={userPoints < reward.pointsCost}
-                    >
-                      {userPoints >= reward.pointsCost
-                        ? t("rewards.redeem")
-                        : `${t("rewards.pointsNeeded")}: ${reward.pointsCost}`}
-                    </Button>
+                  </div>
+
+                  <div className="flex justify-end mt-4">
+                    {redeemed.includes(reward.id) ? (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-success-600 border-success-300"
+                        icon={<CheckCircle size={16} />}
+                        disabled
+                      >
+                        Redeemed
+                      </Button>
+                    ) : showConfirmation === reward.id ? (
+                      <div className="flex space-x-2">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={cancelRedemption}
+                        >
+                          {t("common.cancel")}
+                        </Button>
+                        <Button
+                          variant={
+                            userPoints >= reward.pointsCost
+                              ? "primary"
+                              : "outline"
+                          }
+                          size="sm"
+                          className={
+                            userPoints < reward.pointsCost
+                              ? "text-error-600 border-error-300"
+                              : ""
+                          }
+                          icon={
+                            userPoints >= reward.pointsCost ? (
+                              <CheckCircle size={16} />
+                            ) : (
+                              <AlertCircle size={16} />
+                            )
+                          }
+                          onClick={() =>
+                            confirmRedemption(reward.id, reward.pointsCost)
+                          }
+                          disabled={userPoints < reward.pointsCost}
+                        >
+                          {userPoints >= reward.pointsCost
+                            ? t("common.confirm")
+                            : `Need ${
+                                reward.pointsCost - userPoints
+                              } more points`}
+                        </Button>
+                      </div>
+                    ) : (
+                      <Button
+                        variant={
+                          userPoints >= reward.pointsCost
+                            ? "primary"
+                            : "outline"
+                        }
+                        size="sm"
+                        className={
+                          userPoints < reward.pointsCost
+                            ? "text-neutral-400 border-neutral-300"
+                            : ""
+                        }
+                        icon={
+                          userPoints >= reward.pointsCost ? (
+                            <Gift size={16} />
+                          ) : (
+                            <AlertCircle size={16} />
+                          )
+                        }
+                        onClick={() =>
+                          handleRedeem(reward.id, reward.pointsCost)
+                        }
+                        disabled={userPoints < reward.pointsCost}
+                      >
+                        {userPoints >= reward.pointsCost
+                          ? t("rewards.redeem")
+                          : `${t("rewards.pointsNeeded")}: ${
+                              reward.pointsCost
+                            }`}
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Card>
