@@ -65,4 +65,24 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   );
 };
 
-export default Login;
+// export default Login;
+
+// import { useEffect } from 'react';
+// import { addTestJob, getJobs } from '../services/api';
+
+// export default function FirestoreTest() {
+//   useEffect(() => {
+//     const run = async () => {
+//       const added = await addTestJob();
+//       console.log('✅ Job Added:', added);
+
+//       const jobs = await getJobs();
+//       console.log('📦 All Jobs:', jobs);
+//     };
+
+//     run();
+//   }, []);
+
+//   return <div>Check your console for test job!</div>;
+// }
+
