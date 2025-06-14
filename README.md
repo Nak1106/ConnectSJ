@@ -129,7 +129,7 @@ The homelessness crisis in San José and the Bay Area continues to grow, not due
 | Name              | Role |
 |-------------------|------|
 | **Nakshatra Desai** | Built & integrated the AI chatbot using Langflow MCP |
-| **Akshar [Last Name]** | Built the React frontend, connected serverless backend, and deployed the full app |
+| **Akshar Mehta** | Built the React frontend, connected serverless backend, and deployed the full app |
 
 > 🧠 Want to collaborate with us? Feel free to reach out via LinkedIn or GitHub!
 
