@@ -57,6 +57,36 @@ The homelessness crisis in San José and the Bay Area continues to grow, not due
 - `Sentence Transformers` for semantic understanding  
 - Real-time Pinecone-like flow (embedded logic via Langflow backend)
 
+# Langflow MCP Chatbot Flow
+
+This visual diagram illustrates the **Retrieval-Augmented Generation (RAG)** pipeline implemented using [Langflow](https://github.com/logspace-ai/langflow) for the ConnectSJ AI Chatbot.
+
+## 🧠 Flow Overview
+
+- **User Input**: Captured from frontend chatbot UI
+- **AstraDB Search**: Semantic similarity search across FAQs and custom PDF knowledge base
+- **Prompt Generator**: Dynamically builds user-context-aware prompts
+- **LLM Agent**: Uses Groq + LLaMA2-13B to return personalized, accurate responses
+- **Output**: Final answer is streamed to user
+
+## 🔧 Key Components
+
+| Block | Description |
+|-------|-------------|
+| `Chat Input` | Captures natural language query |
+| `DS Astra DB` | Semantic vector DB search (FAQ + PDF) |
+| `Prompt` | Inserts search results + userProfile into prompt |
+| `Agent` | Groq-powered LLaMA model for completion |
+| `File` + `Split Text` | Ingest custom documents (like `FAQ.pdf`) |
+| `Parser` | Formats results before feeding into LLM |
+
+## 🤖 Agent Configuration
+- **LLM**: Groq + LLaMA2-13B (real-time)
+- **Strategy**: `Prompt + Injected Context → Generation`
+- **Embedding Backend**: AstraDB
+- **Use Case**: San José homeless aid chatbot
+
+> This setup allows the system to return **real-world answers** based on both verified FAQs and uploaded knowledge documents.
 ---
 
 ## 🌐 Live Deployment
