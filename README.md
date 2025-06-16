@@ -33,7 +33,7 @@ The homelessness crisis in San José and the Bay Area continues to grow, not due
 - Personalized and context-aware responses
 
 📂 Screenshot of MCP flow:
-![Langflow MCP RAG Chatbot](docs/chatbot_flow/langflow_mcp_chatbot_flow.png)
+![Langflow MCP RAG Chatbot](docs/screenshot/langflow_mcp_chatbot_flow.png)
 
 ---
 
